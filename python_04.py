@@ -6,6 +6,7 @@ num_1 = int(num_1)
 num_2 = int(num_2)
 suma = num_1+num_2
 resta = num_1-num_2
+
 multiplicacion = num_1 * num_2
 division_entera= num_1 // num_2
 resto_division = num_1 % num_2
