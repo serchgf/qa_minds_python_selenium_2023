@@ -34,7 +34,15 @@ def conversion_int_a_float(num_1: int, num_2: int):
 
 def convertir_temperatura(temperatura: int):
     farenheit= (temperatura*1.8)+32
+    #print(farenheit)
     return  farenheit
+
+def es_par(num_1: int):
+    restante= num_1%2
+    if restante==0:
+        return True
+    else:
+        return False
 
 num_1 = input("Dame un numero entero: ")
 num_2 = input("Dame un numero entero: ")
@@ -53,3 +61,7 @@ celcius = input("Dame una temperatura en celcius: ")
 celcius= float(celcius)
 
 print(f'la temperatura en farenheit es: {convertir_temperatura(celcius)}')
+
+numero_par_o_impar = input("Dame un numero: ")
+numero_par_o_impar= int(numero_par_o_impar)
+print(f'el numero es par: {es_par(numero_par_o_impar)}')
