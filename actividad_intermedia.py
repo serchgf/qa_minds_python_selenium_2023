@@ -50,17 +50,16 @@ def search_course():
                 # print(course)
 
 
-def delete_course(COURSES_LIST: list):
+def delete_course():
     ACTIONS = ("YES", "NO ")
     respuesta = input("Deseas eliminar un curso?:\nYES\nNO\nTu respuesta:  ")
     if respuesta == ACTIONS[0]:
         course_name = input("Ingresa el nombre del curso a eliminar:  ")
-        for course in COURSES_LIST:
-            if course['course_name'] == course_name:
-                pop(course['course_name'])
-                print(f"se elimino: {course_name}")
-            else:
-                print("Curso no existe, no hubo modificaciones")
+        found = [course for course in COURSES_LIST if course['COURSE_NAME'] == course_name]
+        if len(found) > 0:
+            COURSES_LIST.pop(0)
+            print("la nueva lista es:")
+            show_courses()
 
 def update_course():
     print("\nQuieres quieres actualizar una entrada?\n")
@@ -94,7 +93,7 @@ ACTIONS = ("SEARCH", "ADD", "UPDATE", "PRINT", "DELETE", "EXIT ")
 
 while True:
     actions_list = " | ".join(ACTIONS)
-    action = input(f"Seleccione una accion: {actions_list}")
+    action = input(f"Seleccione una accion:\n {actions_list}:")
     if action == ACTIONS[0]:
         search_course()
     elif action == ACTIONS[1]:
@@ -104,7 +103,7 @@ while True:
     elif action == ACTIONS[3]:
         show_courses()
     elif action == ACTIONS[4]:
-        pass
+        delete_course()
     elif action == ACTIONS[5]:
         print("\nCerrando Sistema")
         break
