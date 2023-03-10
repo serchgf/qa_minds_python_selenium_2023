@@ -68,7 +68,7 @@ def update_course():
     action = input('|'.join(ACTIONS) + '|: ')
     if action == ACTIONS[0]:
         print("\nIngresa nombre de curso que quieres actualizar: ")
-        course = SEARCH_COURSE()
+        course = search_course()
         if course is not False:
             print("\nQue dato quieres actualizar?\n")
             DATA = ["COURSE_NAME", "NUM_STUDENTS", "STATUS"]
